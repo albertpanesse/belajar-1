@@ -5,7 +5,9 @@ import { User } from "./interfaces";
 import "./styles.css";
 
 const App = function () {
-  const [userService] = useState<UserService>(injector.get(UserService));
+  console.log("test", injector.get);
+  const test = injector.get(UserService);
+  const [userService] = useState<UserService>();
   const [users, setUsers$] = useObservable<User[]>(null, []);
 
   return (
